@@ -29,13 +29,20 @@
 
 </div>
     -->
-
+    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.min.js"></script>
     <script type="text/javascript" >
         //$("#navegacao").toggleClass("active");
-        $('#home').attr('class', 'active')
+        $('#home').attr('class', 'active');
+        jQuery(function($) {
+            $("#nascimentoBolsista").mask("99/99/9999", {placeholder: "mm/dd/yyyy"});
+            
+        });
+
 
         //if($('#localTrabalhoBolsista').val().get() == );
     </script>
+
     <div class="col-md-12">
         <form  action="<?php base_url() ?>usuario/cadastrar" method="post">
             <!-- BARRA DE NAVEGAÇÃO BOOTSTRAP-->
@@ -86,7 +93,7 @@
                     <!-- LINHA 3 -->
                     <div class="form-group col-md-4">
                         <label for="nascimentoBolsista">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="nascimentoBolsista" name="nascimentoBolsista" placeholder="DD/MM/AAAA" required="">
+                        <input type="text" class="form-control" id="nascimentoBolsista" name="nascimentoBolsista" placeholder="" required="">
                     </div>
 
                     <div class="form-group col-md-4">
@@ -127,7 +134,7 @@
                         <label for="bairroEnderecoBolsista">Bairro</label>
                         <input type="text" class="form-control" id="bairroEnderecoBolsista" name="bairroEnderecoBolsista" placeholder="Bairro" required="" >
                     </div>
-                    
+
                     <div class="form-group col-md-4">
                         <label for="cidadeBolsista">Cidade</label>
                         <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
@@ -138,7 +145,7 @@
                             <option>5</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group col-md-4">
                         <label for="estadoBolsista">Estado</label>
                         <select class="form-control" name="estadoBolsista" id="estadoBolsista" required="">
@@ -149,10 +156,10 @@
                             <option>5</option>
                         </select>
                     </div>
-                    
-                    
-                    
-                    
+
+
+
+
                 </div>
 
 
