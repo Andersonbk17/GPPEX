@@ -36,7 +36,7 @@
         $('#home').attr('class', 'active');
         jQuery(function($) {
             $("#nascimentoBolsista").mask("99/99/9999", {placeholder: "mm/dd/yyyy"});
-            
+
         });
 
 
@@ -72,11 +72,12 @@
                     <div class="form-group col-md-7">
                         <label for="cursoBolsista">Curso</label>
                         <select class="form-control" name="cursoBolsista" id="cursoBolsista" required="">
-                            <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option value="0">Selecione ..</option>
+                            <?php
+                            foreach ($cursos as $value) {
+                                echo "<option value='" . $value->idcurso . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
                         </select>
                     </div>
 
@@ -84,10 +85,11 @@
                         <label for="campusBolsista">Campus</label>
                         <select class="form-control" name="campusBolsista" id="campusBolsista" required="">
                             <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
                         </select>
                     </div>
                     <!-- LINHA 3 -->
@@ -99,11 +101,20 @@
                     <div class="form-group col-md-4">
                         <label for="naturalidadeBolsista">Naturalidade UF</label>
                         <select class="form-control" name="naturalidadeBolsista" id="naturalidadeBolsista" required="">
-                            <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php
+                            $estados = array("Selecione", "Acre", "Alagoas", "Amazonas", "Amapa", "Bahia",
+                                "Ceara", "Distrito Federal", "Espirito Santo", "Goias", "Maranhao", "Minas Gerais",
+                                "Mato Grosso do Sul", "Mato Grosso", "Para", "Paraiba", "Pernambuco", "Piaui", "Parana",
+                                "Rio de Janeiro", "Rio Grande do Norte", "Rondonia", "Roraima", "Rio Grande do Sul", "Santa Catarina",
+                                "Sergipe", "Sao Paulo", "Tocantins");
+                            $valor = 0; //valor do atributo (value) do campo do estado pois o primeiro estado começa com 1
+                            foreach ($estados as $value) {
+                                echo "<option value='" . $valor . "'>" . $value . "</option>";
+                                $valor++;
+                            }
+                            ?>
+
+
                         </select>
                     </div>
 
@@ -111,10 +122,12 @@
                         <label for="nacionalidadeBolsista">Nacionalidade UF</label>
                         <select class="form-control" name="nacionalidadeBolsista" id="nacionalidadeBolsista" required="">
                             <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php
+                            foreach ($nacionalidades as $value) {
+                                echo "<option value='" . $value->id . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+
                         </select>
                     </div>
 
@@ -139,21 +152,26 @@
                         <label for="cidadeBolsista">Cidade</label>
                         <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
                             <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                         
+                         
                         </select>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="estadoBolsista">Estado</label>
                         <select class="form-control" name="estadoBolsista" id="estadoBolsista" required="">
-                            <option>Selecione ..</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php
+                            $estados = array("Selecione", "Acre", "Alagoas", "Amazonas", "Amapa", "Bahia",
+                                "Ceara", "Distrito Federal", "Espirito Santo", "Goias", "Maranhao", "Minas Gerais",
+                                "Mato Grosso do Sul", "Mato Grosso", "Para", "Paraiba", "Pernambuco", "Piaui", "Parana",
+                                "Rio de Janeiro", "Rio Grande do Norte", "Rondonia", "Roraima", "Rio Grande do Sul", "Santa Catarina",
+                                "Sergipe", "Sao Paulo", "Tocantins");
+                            $valor = 0; //valor do atributo (value) do campo do estado pois o primeiro estado começa com 1
+                            foreach ($estados as $value) {
+                                echo "<option value='" . $valor . "'>" . $value . "</option>";
+                                $valor++;
+                            }
+                            ?>
                         </select>
                     </div>
 
@@ -282,7 +300,7 @@
 
                     <div class="form-group col-md-7">
                         <label for="localTrabalhoBolsista">Local de Trabalho</label>
-                        <input type="text" class="form-control" id="localTrabalhoBolsista" name="localTrabalhoBolsista" placeholder="Local de Trabalho" required="">
+                        <input type="text" class="form-control" id="localTrabalhoBolsista" name="localTrabalhoBolsista" placeholder="Local de Trabalho">
                     </div>
                 </div>
 
