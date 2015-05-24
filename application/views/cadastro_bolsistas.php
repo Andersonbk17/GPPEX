@@ -29,19 +29,21 @@
 
 </div>
     -->
+
+
     <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" >
         //$("#navegacao").toggleClass("active");
         $('#home').attr('class', 'active');
-        jQuery(function($) {
-            $("#nascimentoBolsista").mask("99/99/9999", {placeholder: "mm/dd/yyyy"});
 
-        });
 
 
         //if($('#localTrabalhoBolsista').val().get() == );
     </script>
+
+    <script type="text/javascript">$(document).ready(function(){	$("#cpfBolsista").mask("999.999.999-99");});</script>
 
     <div class="col-md-12">
         <form  action="<?php base_url() ?>usuario/cadastrar" method="post">
@@ -152,8 +154,8 @@
                         <label for="cidadeBolsista">Cidade</label>
                         <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
                             <option>Selecione ..</option>
-                         
-                         
+
+
                         </select>
                     </div>
 
