@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Principal extends CI_Controller {
+class Pesquisas extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,6 +24,7 @@ class Principal extends CI_Controller {
               //  $opcaoLateral = array('opcaoLateral'   => 'principal');
 		$this->load->view('/includes/html_header');
                 $this->load->view('/includes/html_footer');
+                 $this->load->view('listar_pesquisas');
                // $this->load->view('/includes/menu');
                 $this->load->view('includes/menu',$opcaoLateral);
 	}
