@@ -27,10 +27,10 @@ class Cadastro_Pesquisa extends CI_Controller {
 
        //echo $cursosCadastrados[1]->nome;
         
-        $opcaoLateral ['opcaoLateral'] = "bolsistas";
+        $opcaoLateral ['opcaoLateral'] = "pesquisa";
         $this->load->view('includes/html_header');
         //$this->load->view('listar_bolsistas',$dados);
-        $this->load->view('cadastro_bolsistas', $dados);
+        $this->load->view('cadastro_pesquisa', $dados);
         $this->load->view('includes/menu', $opcaoLateral);
         $this->load->view('includes/html_footer');
     }

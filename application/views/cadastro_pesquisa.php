@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
     <div class="col-md-12">
-        <h1 class="page-header">NOVO BOLSISTA</h1>
+        <h1 class="page-header">NOVA PESQUISA</h1>
     </div>
     <!-- MENSAGEM DE CONFIRMAÇÂO
     <div class="col-md-12">
@@ -31,60 +31,111 @@
     -->
 
 
-    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.maskedinput.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
     <script type="text/javascript" >
         //$("#navegacao").toggleClass("active");
         $('#home').attr('class', 'active');
 
 
-
-        //if($('#localTrabalhoBolsista').val().get() == );
     </script>
 
-    <script type="text/javascript">$(document).ready(function(){	$("#cpfBolsista").mask("999.999.999-99");});</script>
+    <script type="text/javascript" >
+        //mascaras dos campos
+        $(document).ready(function() {
+
+            $("#inicioProjeto").mask("99/99/9999");
+            $("#terminoPrjeto").mask("999.999.999-99");
+
+
+        });
+
+
+    </script>
+
+
 
     <div class="col-md-12">
         <form  action="<?php base_url() ?>usuario/cadastrar" method="post">
             <!-- BARRA DE NAVEGAÇÃO BOOTSTRAP-->
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#dadosAluno" data-toggle="tab">Dados do Aluno</a>
+                    <a href="#dadosAluno" data-toggle="tab">Identificação do Projeto</a>
                 </li>
-                <li><a href="#documentos" data-toggle="tab">Documentos</a></li>
+                <li><a href="#resumo" data-toggle="tab">Resumo</a></li>
                 <li><a href="#dadosPais" data-toggle="tab">Dados dos Pais</a></li>
-                <li><a href="#outrosDados" data-toggle="tab">Outros Dados</a></li>
+                <li><a href="#participantes" data-toggle="tab">Participantes do Projeto</a></li>
             </ul>
             <div class="tab-content">
 
                 <!-- ABA 1 DADOS DO BOLSISTA-->
                 <div id="dadosAluno" class="tab-pane active">
                     <div class="form-group col-md-7">
-                        <label for="nomeBolsista">Nome</label>
-                        <input type="text" class="form-control" id="nomeBolsista" name="nomeBolsista" placeholder="Nome Completo" required="">
+                        <label for="tituloProjeto">Título</label>
+                        <input type="text" class="form-control" id="tituloProjeto" maxlength="120" name="tituloProjeto" placeholder="Título Completo" required="">
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="matriculaBolsista">Matricula</label>
-                        <input type="text" class="form-control" id="matriculaBolsista" name="matriculaBolsista" placeholder="Número de Matricula" required="">
+                        <label for="cadastroPesquisa">Nº do Cadastro</label>
+                        <input type="text" class="form-control" id="cadastroPesquisa" name="cadastroPesquisa" placeholder="" maxlength="7">
                     </div>
 
                     <!-- LINHA 2 -->
 
                     <div class="form-group col-md-7">
-                        <label for="cursoBolsista">Curso</label>
-                        <select class="form-control" name="cursoBolsista" id="cursoBolsista" required="">
+                        <label for="orientador">Coordenador (Orientador do projeto)</label>
+                        <select class="form-control" name="orientador" id="orientador" required="">
                             <option value="0">Selecione ..</option>
-                            <?php
-                            foreach ($cursos as $value) {
-                                echo "<option value='" . $value->idcurso . "'>" . $value->nome . "</option>";
-                            }
-                            ?>
+                            <option value="1">Albert Einstein</option>
+                            <option value="2">Adriano Antunes</option>
+                            <option value="3">Cleiane Oliveira</option>
+                            <option value="4">Danilo Magalhaes Nunes</option>
+                            <option value="5">Petrônio Candido</option>
+                            <option value="6">Joselice Lima</option>
+
+
+
+
                         </select>
                     </div>
 
+
                     <div class="form-group col-md-5">
-                        <label for="campusBolsista">Campus</label>
+                        <label for="setorCoordenador">Setor do Coordenador/Campus do IFNMG</label>
+                        <input type="text" class="form-control" maxlength="120" id="setorCoordenador" name="setorCoordenador" placeholder="Ex: Departamento/Setor" >
+                    </div>
+
+
+
+                    <!-- LINHA 3 -->
+                    <div class="form-group col-md-4">
+                        <label for="inicioProjeto">Data de Início do Projeto</label>
+                        <input type="text" class="form-control" id="inicioProjeto" name="inicioProjeto" placeholder="dd/mm/aaaa" required="">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="terminoPrjeto">Data de Término do Projeto</label>
+                        <input type="text" class="form-control" id="terminoPrjeto" name="terminoPrjeto" placeholder="dd/mm/aaaa" required="">
+                    </div>
+
+
+
+                    <div class="form-group col-md-4">
+                        <label for="grupoPesquisa">Grupo de Pesquisa </label>
+                        <input class="form-control" name="grupoPesquisa" id="grupoPesquisa" placeholder="Se houver" maxlength="70">
+
+                    </div>
+
+                    <!-- LINHA 4 -->
+
+                    <div class="form-group col-md-7">
+                        <label for="areaConhecimento">Área  do Conhecimento</label>
+                        <input type="text" class="form-control" id="areaConhecimento" maxlength="120" name="areaConhecimento" placeholder="Consultar tabela CNPq" required="">
+                    </div>
+
+
+
+
+                    <div class="form-group col-md-5">
+                        <label for="campusBolsista">Campus de Execução do Projeto</label>
                         <select class="form-control" name="campusBolsista" id="campusBolsista" required="">
                             <option>Selecione ..</option>
                             <?php
@@ -94,56 +145,7 @@
                             ?>
                         </select>
                     </div>
-                    <!-- LINHA 3 -->
-                    <div class="form-group col-md-4">
-                        <label for="nascimentoBolsista">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="nascimentoBolsista" name="nascimentoBolsista" placeholder="" required="">
-                    </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="naturalidadeBolsista">Naturalidade UF</label>
-                        <select class="form-control" name="naturalidadeBolsista" id="naturalidadeBolsista" required="">
-                            <?php
-                            $estados = array("Selecione", "Acre", "Alagoas", "Amazonas", "Amapa", "Bahia",
-                                "Ceara", "Distrito Federal", "Espirito Santo", "Goias", "Maranhao", "Minas Gerais",
-                                "Mato Grosso do Sul", "Mato Grosso", "Para", "Paraiba", "Pernambuco", "Piaui", "Parana",
-                                "Rio de Janeiro", "Rio Grande do Norte", "Rondonia", "Roraima", "Rio Grande do Sul", "Santa Catarina",
-                                "Sergipe", "Sao Paulo", "Tocantins");
-                            $valor = 0; //valor do atributo (value) do campo do estado pois o primeiro estado começa com 1
-                            foreach ($estados as $value) {
-                                echo "<option value='" . $valor . "'>" . $value . "</option>";
-                                $valor++;
-                            }
-                            ?>
-
-
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                        <label for="nacionalidadeBolsista">Nacionalidade UF</label>
-                        <select class="form-control" name="nacionalidadeBolsista" id="nacionalidadeBolsista" required="">
-                            <option>Selecione ..</option>
-                            <?php
-                            foreach ($nacionalidades as $value) {
-                                echo "<option value='" . $value->id . "'>" . $value->nome . "</option>";
-                            }
-                            ?>
-
-                        </select>
-                    </div>
-
-                    <!-- LINHA 4 -->
-
-                    <div class="form-group col-md-7">
-                        <label for="enderecoBolsista">Endereço</label>
-                        <input type="text" class="form-control" id="enderecoBolsista" name="enderecoBolsista" placeholder="Avenida, Rua, Estrada" required="">
-                    </div>
-
-                    <div class="form-group col-md-5">
-                        <label for="complementoEnderecoBolsista">Complemento</label>
-                        <input type="text" class="form-control" id="complementoEnderecoBolsista" name="complementoEnderecoBolsista" placeholder="Casa, Bloco,Apartamento" >
-                    </div>
                     <!-- LINHA 5 -->
                     <div class="form-group col-md-4">
                         <label for="bairroEnderecoBolsista">Bairro</label>
@@ -183,48 +185,13 @@
                 </div>
 
 
-                <!-- ABA 2 DOCUMENTOS-->
-                <div id="documentos" class="tab-pane">
+                <!-- ABA 2 Resumo-->
+                <div id="resumo" class="tab-pane">
 
                     <!-- linha 1 -->
-                    <div class="form-group col-md-5">
-                        <label for="identidadeBolsista">RG</label>
-                        <input type="text" class="form-control" id="identidadeBolsista" name="identidadeBolsista" placeholder="Carteira de Identidade " required="">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="orgaoExpedidorBolsista">Orgão Expedidor</label>
-                        <input type="text" class="form-control" id="orgaoExpedidorBolsista" name="orgaoExpedidorBolsista" placeholder="Orgão Expedidor " required="">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="dataExpedicaoBolsista">Data da Expedição</label>
-                        <input type="text" class="form-control" id="dataExpedicaoBolsista" name="dataExpedicaoBolsista" placeholder="DD/MM/AAAA " required="">
-                    </div>
-
-                    <!-- linha 2 -->
-                    <div class="form-group col-md-5">
-                        <label for="tituloEletitorBolsista">Titulo Eleitoral</label>
-                        <input type="text" class="form-control" id="tituloEletitorBolsista" name="tituloEletitorBolsista" placeholder="Número do titulo Eleitoral " required="">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="secaoEleitoralBolsista">Seção Eleitoral</label>
-                        <input type="text" class="form-control" id="secaoEleitoralBolsista" name="secaoEleitoralBolsista" placeholder="Número da seção Eleitoral " required="">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="zonaEleitoralBolsista">Zona Eleitoral</label>
-                        <input type="text" class="form-control" id="zonaEleitoralBolsista" name="zonaEleitoralBolsista" placeholder="Número da zona Eleitoral " required="">
-                    </div>
-                    <!-- linha3 -->
-                    <div class="form-group col-md-5">
-                        <label for="cpfBolsista">CPF</label>
-                        <input type="text" class="form-control" id="cpfBolsista" name="cpfBolsista" placeholder="xxx.xxx.xxx.-xx " required="">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="situacaoMilitarBolsista">Situação Militar</label>
-                        <input type="text" class="form-control" id="situacaoMilitarBolsista" name="situacaoMilitarBolsista" placeholder="Situação Militar" required="">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="certidaoMilitarBolsista">Certidao Militar</label>
-                        <input type="text" class="form-control" id="certidaoMilitarBolsista" name="certidaoMilitarBolsista" placeholder="Número da certidão Militar " required="">
+                    <div class="form-group col-md-10 ">
+                        <label for="resumo">Resumo do Projeto</label>
+                        <textarea class="form-control" rows="10" id="resumo" name="" required="" placeholder="Inserir um pequeno resumo sobre o projeto"></textarea>
                     </div>
 
 
@@ -286,25 +253,197 @@
 
 
 
-                <!-- ABA 4 OUTROS DADOS-->
+                <!-- ABA 4 Participantes do Projeto-->
 
-                <div id="outrosDados" class="tab-pane ">
+                <div id="participantes" class="tab-pane ">
 
-                    <div class="form-group col-md-5">
-                        <label for="trabalhaBosista">Bolsista Trabalha?</label>
-                        <select class="form-control" name="trabalhaBosista" id="trabalhaBosista" required="">
-                            <option selected="">Selecione ..</option>
-                            <option value="1">SIM</option>
-                            <option value="0">NÃO</option>
-
+                    
+                    <!-- LINHA 1 -->
+                    <div class="form-group col-md-4">
+                        <label for="participanteParticipante1">Participante</label>
+                        <input type="text" class="form-control" id="participanteParticipante1" name="participanteParticipante1" placeholder="Insira o Nome" >
+                    </div>
+                    
+                     <div class="form-group col-md-2">
+                        <label for="titulacaoParticipante1">Titulação</label>
+                        <select class="form-control" name="titulacaoParticipante1" id="titulacaoParticipante1" required="">
+                            <option value="0">Selecione ..</option>
+                            <option value="1">Mestre</option>
+                            <option value="2">Doutor</option>
+                            <option value="3">Graduando</option>
+                            <option value="4">Especialista</option>
+                            
                         </select>
                     </div>
-
-                    <div class="form-group col-md-7">
-                        <label for="localTrabalhoBolsista">Local de Trabalho</label>
-                        <input type="text" class="form-control" id="localTrabalhoBolsista" name="localTrabalhoBolsista" placeholder="Local de Trabalho">
+                    
+                    <div class="form-group col-md-3">
+                        <label for="campusParticipante1">Campus </label>
+                        <select class="form-control" name="campusParticipante1" id="campusParticipante1" >
+                            <option>Selecione ..</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
-                </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="observacaoParticipante1">Observação</label>
+                        <input type="text" class="form-control" id="observacaoParticipante1" name="observacaoParticipante1" placeholder="" >
+                    </div>
+                    
+                    <!-- FIM LINHA 1 -->
+                    
+                     <!-- LINHA 2 -->
+                    <div class="form-group col-md-4">
+                        <label for="participanteParticipante2">Participante</label>
+                        <input type="text" class="form-control" id="participanteParticipante2" name="participanteParticipante2" placeholder="Insira o Nome" >
+                    </div>
+                    
+                     <div class="form-group col-md-2">
+                        <label for="titulacaoParticipante2">Titulação</label>
+                        <select class="form-control" name="titulacaoParticipante2" id="titulacaoParticipante2" required="">
+                            <option value="0">Selecione ..</option>
+                            <option value="1">Mestre</option>
+                            <option value="2">Doutor</option>
+                            <option value="3">Graduando</option>
+                            <option value="4">Especialista</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="campusParticipante2">Campus </label>
+                        <select class="form-control" name="campusParticipante2" id="campusParticipante2" >
+                            <option>Selecione ..</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="observacaoParticipante2">Observação</label>
+                        <input type="text" class="form-control" id="observacaoParticipante2" name="observacaoParticipante2" placeholder="" >
+                    </div>
+                    
+                    <!-- FIM LINHA 2 -->
+                    
+                     <!-- LINHA 3 -->
+                    <div class="form-group col-md-4">
+                        <label for="participanteParticipante3">Participante</label>
+                        <input type="text" class="form-control" id="participanteParticipante3" name="participanteParticipante3" placeholder="Insira o Nome" >
+                    </div>
+                    
+                     <div class="form-group col-md-2">
+                        <label for="titulacaoParticipante3">Titulação</label>
+                        <select class="form-control" name="titulacaoParticipante3" id="titulacaoParticipante3" required="">
+                            <option value="0">Selecione ..</option>
+                            <option value="1">Mestre</option>
+                            <option value="2">Doutor</option>
+                            <option value="3">Graduando</option>
+                            <option value="4">Especialista</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="campusParticipante3">Campus </label>
+                        <select class="form-control" name="campusParticipante3" id="campusParticipante3" >
+                            <option>Selecione ..</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="observacaoParticipante3">Observação</label>
+                        <input type="text" class="form-control" id="observacaoParticipante3" name="observacaoParticipante3" placeholder="" >
+                    </div>
+                    
+                    <!-- FIM LINHA 3 -->
+                    
+                     <!-- LINHA 4 -->
+                    <div class="form-group col-md-4">
+                        <label for="participanteParticipante4">Participante</label>
+                        <input type="text" class="form-control" id="participanteParticipante4" name="participanteParticipante4" placeholder="Insira o Nome" >
+                    </div>
+                    
+                     <div class="form-group col-md-2">
+                        <label for="titulacaoParticipante4">Titulação</label>
+                        <select class="form-control" name="titulacaoParticipante4" id="titulacaoParticipante4" required="">
+                            <option value="0">Selecione ..</option>
+                            <option value="1">Mestre</option>
+                            <option value="2">Doutor</option>
+                            <option value="3">Graduando</option>
+                            <option value="4">Especialista</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="campusParticipante4">Campus </label>
+                        <select class="form-control" name="campusParticipante4" id="campusParticipante4" >
+                            <option>Selecione ..</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="observacaoParticipante4">Observação</label>
+                        <input type="text" class="form-control" id="observacaoParticipante4" name="observacaoParticipante4" placeholder="" >
+                    </div>
+                    
+                    <!-- FIM LINHA 4 -->
+                    
+                     <!-- LINHA 5 -->
+                    <div class="form-group col-md-4">
+                        <label for="participanteParticipante4">Participante</label>
+                        <input type="text" class="form-control" id="participanteParticipante4" name="participanteParticipante4" placeholder="Insira o Nome" >
+                    </div>
+                    
+                     <div class="form-group col-md-2">
+                        <label for="titulacaoParticipante4">Titulação</label>
+                        <select class="form-control" name="titulacaoParticipante4" id="titulacaoParticipante4" required="">
+                            <option value="0">Selecione ..</option>
+                            <option value="1">Mestre</option>
+                            <option value="2">Doutor</option>
+                            <option value="3">Graduando</option>
+                            <option value="4">Especialista</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="campusParticipante4">Campus </label>
+                        <select class="form-control" name="campusParticipante4" id="campusParticipante4" >
+                            <option>Selecione ..</option>
+                            <?php
+                            foreach ($campus as $value) {
+                                echo "<option value='" . $value->idCampus . "'>" . $value->nome . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group col-md-3">
+                        <label for="observacaoParticipante4">Observação</label>
+                        <input type="text" class="form-control" id="observacaoParticipante4" name="observacaoParticipante4" placeholder="" >
+                    </div>
+                    
+                    <!-- FIM LINHA 5 -->
+
+                    
 
 
             </div>

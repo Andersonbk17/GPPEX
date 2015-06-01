@@ -36,7 +36,7 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
 
     <script type="text/javascript">
-        //Códigos de macaras com bibliotecas externas
+        //Códigos de mascaras com bibliotecas externas
         jQuery(function($) {
             $("#nascimentoBolsista").mask("99/99/9999");
 
