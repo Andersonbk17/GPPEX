@@ -28,7 +28,7 @@ class Nacionalidades extends CI_Model {
     }
 
     public function listarNacionalidades() {
-        return $this->db->get('nacionalidade');
+        return $this->db->get('nacionalidade');//retorna todas as nacionalidades
     }
 
 }

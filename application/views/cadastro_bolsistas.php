@@ -31,9 +31,21 @@
     -->
 
 
-    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.maskedinput.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+
+    <script type="text/javascript">
+        //Códigos de macaras com bibliotecas externas
+        jQuery(function($) {
+            $("#nascimentoBolsista").mask("99/99/9999");
+
+
+        });
+    </script>
+
+
+
     <script type="text/javascript" >
         //$("#navegacao").toggleClass("active");
         $('#home').attr('class', 'active');
@@ -43,9 +55,58 @@
         //if($('#localTrabalhoBolsista').val().get() == );
     </script>
 
-    <script type="text/javascript">$(document).ready(function(){	$("#cpfBolsista").mask("999.999.999-99");});</script>
+    <script type="text/javascript">
 
-    <div class="col-md-12">
+        $(document).ready(function() {
+            $("#cpfBolsista").mask("999.999.999-99");
+            $("#dataExpedicaoBolsista").mask("99/99/9999");
+            $("#cpfBolsista").mask("999.999.999-99");
+            $("#cpfMae").mask("999.999.999-99");
+            $("#cpfResponsavel").mask("999.999.999-99");
+        });
+    </script>
+
+    <script type="text/javascript">
+/*
+ * 
+ * TENTATIVA USO AJAX 1.1 FAILLLL
+ */
+/*
+        $(document).ready(function() {
+            $('#estadoBolsista').change(function() {
+                
+                var controller = 'Cadastro_Bolsista';
+                var base_url = '<?//php echo base_url(); //you have to load the "url_helper" to use this function    ?>';
+                var idEstado = $('#estadoBolsista').val();
+                //alert(idEstado);
+                function load_data_ajax(type) {
+                    $.ajax({
+                        
+                        'url': base_url + controller + '/buscarCidadeAjax/' + idEstado,
+                        'type': 'POST', //the way you want to send data to your URL
+                        'data': {'type': type},
+                        'success': function(data) { //probably this request will return anything, it'll be put in var "data"
+                            var container = $('#container'); //jquery selector (get element by id)
+                            if (data) {
+                                container.html(data);
+                            }
+                        }
+                    });
+                    
+                }
+
+
+
+
+            });
+        });
+
+
+*/
+
+    </script>
+
+    <div class="col-md-12" >
         <form  action="<?php base_url() ?>usuario/cadastrar" method="post">
             <!-- BARRA DE NAVEGAÇÃO BOOTSTRAP-->
             <ul class="nav nav-tabs">
@@ -62,7 +123,7 @@
                 <div id="dadosAluno" class="tab-pane active">
                     <div class="form-group col-md-7">
                         <label for="nomeBolsista">Nome</label>
-                        <input type="text" class="form-control" id="nomeBolsista" name="nomeBolsista" placeholder="Nome Completo" required="">
+                        <input type="text" maxlength="100" class="form-control" id="nomeBolsista" name="nomeBolsista" placeholder="Nome Completo" required="">
                     </div>
                     <div class="form-group col-md-5">
                         <label for="matriculaBolsista">Matricula</label>
@@ -97,7 +158,7 @@
                     <!-- LINHA 3 -->
                     <div class="form-group col-md-4">
                         <label for="nascimentoBolsista">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="nascimentoBolsista" name="nascimentoBolsista" placeholder="" required="">
+                        <input type="text" class="form-control" id="nascimentoBolsista" name="nascimentoBolsista" placeholder="dd/mm/aaaa" required="">
                     </div>
 
                     <div class="form-group col-md-4">
@@ -150,14 +211,6 @@
                         <input type="text" class="form-control" id="bairroEnderecoBolsista" name="bairroEnderecoBolsista" placeholder="Bairro" required="" >
                     </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="cidadeBolsista">Cidade</label>
-                        <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
-                            <option>Selecione ..</option>
-
-
-                        </select>
-                    </div>
 
                     <div class="form-group col-md-4">
                         <label for="estadoBolsista">Estado</label>
@@ -176,6 +229,18 @@
                             ?>
                         </select>
                     </div>
+
+
+                    <div class="form-group col-md-4">
+                        <label for="cidadeBolsista">Cidade</label>
+                        <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
+                            <option>Selecione ..</option>
+
+
+                        </select>
+                    </div>
+
+
 
 
 
@@ -316,18 +381,47 @@
 
 
     <!-- BOTOES DE ENVIO E CANCELAMENTO-->
-    <div style="text-align: right; alignment-adjust: baseline ">
-        <button type="submit" class="btn btn-success">
+    <div style="text-align: right; alignment-adjust: baseline;  ">
+        <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModal">
             Enviar
         </button>
         <button type="reset" class="btn btn-default">
             Cancelar
         </button>
     </div>
+
+
+
+
+
+    <!-- PARTE DA TELA DE CONFIRMAÇÃO DE ENVIO DE FORMULARIO MODAL BOOTSTRAP -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Verificar Informações</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM PARTE DA TELA DE CONFIRMAÇÃO DE ENVIO DE FORMULARIO MODAL BOOTSTRAP -->
+
 </form>
 </div>
 
 </div>
 </div>
 </div>
+
 

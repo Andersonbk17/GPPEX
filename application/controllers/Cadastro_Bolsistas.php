@@ -30,9 +30,14 @@ class Cadastro_Bolsistas extends CI_Controller {
         $opcaoLateral ['opcaoLateral'] = "bolsistas";
         $this->load->view('includes/html_header');
         //$this->load->view('listar_bolsistas',$dados);
-        $this->load->view('cadastro_bolsistas', $dados);
-        $this->load->view('includes/menu', $opcaoLateral);
+        $this->load->view('cadastro_bolsistas', $dados);//envia array de dados
+        $this->load->view('includes/menu', $opcaoLateral);//nome da opção selecionada a esquerda
         $this->load->view('includes/html_footer');
+        
+        
+       // $this->buscarCidadeAjax(2);
+       //print_r($this->buscarCidadeAjax(2));
+       
     }
 
     public function cadastro() {
@@ -69,6 +74,13 @@ class Cadastro_Bolsistas extends CI_Controller {
         } else {
             redirect('usuario');
         }
+    }
+    
+    public function buscarCidadeAjax($idEstado = null) {
+        //print_r( $dados ['cidads'] = $this->Cidades->listarCidadesPorEstado($idEstado)->result());
+        return $dados ['cidads'] = $this->Cidades->listarCidadesPorEstado($idEstado)->result();
+        //print_r($dados);
+        
     }
 
 }

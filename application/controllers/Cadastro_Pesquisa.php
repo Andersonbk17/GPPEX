@@ -17,7 +17,7 @@ class Cadastro_Pesquisa extends CI_Controller {
         $dados['cursos'] = $this->cursos->listarCursos()->result(); // transformou o result() objeto em array nao sei como mas funfa
       //  $cursosCadastrados = $this->cursos->listarCursos()->result_array();
 
-        $dados['campus'] = $this->Campus->listarCampus()->result();
+        $dados['campus'] = $this->Campus->listarCampus()->result();// transformou o result() objeto em array
         $dados ['nacionalidades'] = $this->nacional->listarNacionalidades()->result();
         //$dados ['cidades'] = $this->Cidades->listarCidades()->result();
         //foreach ($cursosCadastrados as $aa) {

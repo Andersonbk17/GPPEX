@@ -41,6 +41,15 @@ class Cidades extends CI_Model{
         
     }
     
+    public function listarCidadesPorEstado($idEstado = NULL){
+        $this->db->select('*');
+        $this->db->where('idEstado',$idEstado);
+             
+        return $this->db->get('cidade');
+        
+    }
+    
     
 }
+
 
