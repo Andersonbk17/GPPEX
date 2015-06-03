@@ -10,7 +10,7 @@
 
     <div class="col-md-12">
         <table class="table table-striped">
-            <tr>
+            <tr class="table tab-pane">
                 <th>ID</th>
                 <th>LOGIN</th>
 

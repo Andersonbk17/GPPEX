@@ -8,15 +8,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SGPPEX</a>
+            <a class="navbar-brand" href="<?php base_url()?>Principal">SGPPEX</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Configurações</a></li>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Ajuda</a></li>
-            <li><a href="<?php base_url()?>login">Sair</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Mensagens</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configurações</a></li>
+            
+            <li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Ajuda</a></li>
+            <li><a id="botaoSair" href="<?php base_url()?>login"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
           </ul>
             <!--
           <form class="navbar-form navbar-right">

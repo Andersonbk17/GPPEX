@@ -24,6 +24,8 @@ class Principal extends CI_Controller {
               //  $opcaoLateral = array('opcaoLateral'   => 'principal');
 		$this->load->view('/includes/html_header');
                 $this->load->view('/includes/html_footer');
+                $this->load->view('home');
+                
                // $this->load->view('/includes/menu');
                 $this->load->view('includes/menu',$opcaoLateral);
 	}

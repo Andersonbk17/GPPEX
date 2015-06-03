@@ -24,6 +24,9 @@
     
     <script type="text/javascript" src="<?php base_url(); ?>assets/js/jquery.min.nova.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.maskedinput.min.js"></script>
+    
+    <!-- JQUERY COOKIE -->
+    <script type="text/javascript" src="<?php base_url() ?>assets/js/jquery.cookie/jquery.cookie.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
