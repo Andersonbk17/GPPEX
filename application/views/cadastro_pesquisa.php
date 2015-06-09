@@ -44,7 +44,7 @@
         $(document).ready(function() {
 
             $("#inicioProjeto").mask("99/99/9999");
-            $("#terminoPrjeto").mask("999.999.999-99");
+            $("#terminoPrjeto").mask("99/99/9999");
 
 
         });
@@ -62,7 +62,7 @@
                     <a href="#dadosAluno" data-toggle="tab">Identificação do Projeto</a>
                 </li>
                 <li><a href="#resumo" data-toggle="tab">Resumo</a></li>
-                <li><a href="#dadosPais" data-toggle="tab">Dados dos Pais</a></li>
+                
                 <li><a href="#participantes" data-toggle="tab">Participantes do Projeto</a></li>
             </ul>
             <div class="tab-content">
@@ -70,7 +70,7 @@
                 <!-- ABA 1 DADOS DO BOLSISTA-->
                 <div id="dadosAluno" class="tab-pane active">
                     <div class="form-group col-md-7">
-                        <label for="tituloProjeto">Título</label>
+                        <label for="tituloProjeto">Título*</label>
                         <input type="text" class="form-control" id="tituloProjeto" maxlength="120" name="tituloProjeto" placeholder="Título Completo" required="">
                     </div>
                     <div class="form-group col-md-5">
@@ -81,7 +81,7 @@
                     <!-- LINHA 2 -->
 
                     <div class="form-group col-md-7">
-                        <label for="orientador">Coordenador (Orientador do projeto)</label>
+                        <label for="orientador">Coordenador (Orientador do projeto)*</label>
                         <select class="form-control" name="orientador" id="orientador" required="">
                             <option value="0">Selecione ..</option>
                             <option value="1">Albert Einstein</option>
@@ -99,7 +99,7 @@
 
 
                     <div class="form-group col-md-5">
-                        <label for="setorCoordenador">Setor do Coordenador/Campus do IFNMG</label>
+                        <label for="setorCoordenador">Setor do Coordenador/Campus do IFNMG*</label>
                         <input type="text" class="form-control" maxlength="120" id="setorCoordenador" name="setorCoordenador" placeholder="Ex: Departamento/Setor" >
                     </div>
 
@@ -107,12 +107,12 @@
 
                     <!-- LINHA 3 -->
                     <div class="form-group col-md-4">
-                        <label for="inicioProjeto">Data de Início do Projeto</label>
+                        <label for="inicioProjeto">Data de Início do Projeto*</label>
                         <input type="text" class="form-control" id="inicioProjeto" name="inicioProjeto" placeholder="dd/mm/aaaa" required="">
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="terminoPrjeto">Data de Término do Projeto</label>
+                        <label for="terminoPrjeto">Data de Término do Projeto*</label>
                         <input type="text" class="form-control" id="terminoPrjeto" name="terminoPrjeto" placeholder="dd/mm/aaaa" required="">
                     </div>
 
@@ -127,7 +127,7 @@
                     <!-- LINHA 4 -->
 
                     <div class="form-group col-md-7">
-                        <label for="areaConhecimento">Área  do Conhecimento</label>
+                        <label for="areaConhecimento">Área  do Conhecimento*</label>
                         <input type="text" class="form-control" id="areaConhecimento" maxlength="120" name="areaConhecimento" placeholder="Consultar tabela CNPq" required="">
                     </div>
 
@@ -135,7 +135,7 @@
 
 
                     <div class="form-group col-md-5">
-                        <label for="campusBolsista">Campus de Execução do Projeto</label>
+                        <label for="campusBolsista">Campus de Execução do Projeto*</label>
                         <select class="form-control" name="campusBolsista" id="campusBolsista" required="">
                             <option>Selecione ..</option>
                             <?php
@@ -148,12 +148,12 @@
 
                     <!-- LINHA 5 -->
                     <div class="form-group col-md-4">
-                        <label for="bairroEnderecoBolsista">Bairro</label>
+                        <label for="bairroEnderecoBolsista">Bairro*</label>
                         <input type="text" class="form-control" id="bairroEnderecoBolsista" name="bairroEnderecoBolsista" placeholder="Bairro" required="" >
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="cidadeBolsista">Cidade</label>
+                        <label for="cidadeBolsista">Cidade*</label>
                         <select class="form-control" name="cidadeBolsista" id="cidadeBolsista" required="">
                             <option>Selecione ..</option>
 
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="estadoBolsista">Estado</label>
+                        <label for="estadoBolsista">Estado*</label>
                         <select class="form-control" name="estadoBolsista" id="estadoBolsista" required="">
                             <?php
                             $estados = array("Selecione", "Acre", "Alagoas", "Amazonas", "Amapa", "Bahia",
@@ -189,8 +189,8 @@
                 <div id="resumo" class="tab-pane">
 
                     <!-- linha 1 -->
-                    <div class="form-group col-md-10 ">
-                        <label for="resumo">Resumo do Projeto</label>
+                    <div class="form-group col-md-12 ">
+                        <label for="resumo">Resumo do Projeto*</label>
                         <textarea class="form-control" rows="10" id="resumo" name="" required="" placeholder="Inserir um pequeno resumo sobre o projeto"></textarea>
                     </div>
 
@@ -199,57 +199,7 @@
 
 
 
-                <!-- ABA 3 DADOS DOS PAIS-->
-
-                <div id="dadosPais" class="tab-pane">
-                    <!-- linha! -->
-                    <div class="form-group col-md-7">
-                        <label for="nomeResponsavel">Nome Responsável</label>
-                        <input type="text" class="form-control" id="nomeResponsavel" name="nomeResponsavel" placeholder="Pai ou Responsável" required="">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="cpfResponsavel">CPF Responsável</label>
-                        <input type="text" class="form-control" id="cpfResponsavel" name="cpfResponsavel" placeholder="XXX.XXX.XXX-XX" required="">
-                    </div>
-
-
-
-                    <!-- linha3 -->
-                    <div class="form-group col-md-7">
-                        <label for="numeroRgResponsavel">RG</label>
-                        <input type="text" class="form-control" id="numeroRgResponsavel" name="numeroRgResponsavel" placeholder="Carteira de Identidade Responsável" required="">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="orgaoExpedidorResponsavel">Orgão Expedidor</label>
-                        <input type="text" class="form-control" id="orgaoExpedidorResponsavel" name="orgaoExpedidorResponsavel" placeholder="Orgão Expedidor Responsável" required="">
-                    </div>
-
-                    <!-- PARTE MAE! -->
-                    <div class="form-group col-md-7">
-                        <label for="nomeMae">Nome Mãe</label>
-                        <input type="text" class="form-control" id="nomeMae" name="nomeMae" placeholder="Nome da Mãe" required="">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="cpfMae">CPF Mãe</label>
-                        <input type="text" class="form-control" id="cpfMae" name="cpfMae" placeholder="XXX.XXX.XXX-XX" required="">
-                    </div>
-
-
-
-                    <!-- linha3 -->
-                    <div class="form-group col-md-7">
-                        <label for="numeroRgMae">RG Mãe</label>
-                        <input type="text" class="form-control" id="numeroRgMae" name="numeroRgMae" placeholder="Carteira de Identidade Mãe" required="">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="orgaoExpedidorMae">Orgão Expedidor</label>
-                        <input type="text" class="form-control" id="orgaoExpedidorMae" name="orgaoExpedidorMae" placeholder="Orgão Expedidor Mãe" required="">
-                    </div>
-
-
-                    <!-- linha3 -->
-                </div>
-
+                
 
 
 

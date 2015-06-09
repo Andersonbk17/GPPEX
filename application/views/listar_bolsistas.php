@@ -13,20 +13,22 @@
 			<tr>
 				<th>ID</th>
 				<th>NOME</th>
-				<th>EMAIL</th>
-				<th></th>
+				<th>CPF</th>
+                                <th>EMAIL</th>
+				
 				<th></th>
 			</tr>
-	<!--		<?//php foreach ($bolsista as $user) {?>
+			<?php   foreach ($bolsista as $bol) {?>
 			<tr>
-				<td><?//php $user->id;?></td>
-				<td><?//php $user->username;?></td>
-				<td><?//php $user->email;?></td>
-				<td><a href="<?//php base_url('usuario/alterar'.$user->id)?>" class="btn btn-primary">Alterar</a></td>
-				<td><a href="<?//php base_url('usuario/excluir/'.$user->id) ?>" class="btn btn-danger" onclick="return confirm('Deseja Realmende excluir o Usuario?');">Excluir</a></td>
+				<td><?php echo $bol->idbosistas;?></td>
+				<td><?php echo $bol->nome;?></td>
+				<td><?php echo $bol->cpf;?></td>
+                                <td><?php echo $bol->email;?></td>
+				<!--<td><a href="<?//php base_url('usuario/alterar'.$user->id)?>" class="btn btn-primary">Alterar</a></td>
+				<td><a href="<?//php base_url('usuario/excluir/'.$user->id) ?>" class="btn btn-danger" onclick="return confirm('Deseja Realmende excluir o Usuario?');">Excluir</a></td> -->
 			</tr>
-			<?//php }?>
- -->
+			<?php }?>
+ 
 		</table>
 				
 		

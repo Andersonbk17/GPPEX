@@ -10,4 +10,9 @@ class Bolsista extends CI_Model{
     
     private $id;
     
+    
+    
+    public function listarBolsistas() {
+        return $this->db->get('bosistas'); //retorna os usuarios cadastrados
+    }
 }

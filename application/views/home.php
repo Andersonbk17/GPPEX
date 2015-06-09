@@ -20,7 +20,7 @@
 
     </script>
 
-    data-toggle="modal" data-target="#myModal"
+
     <!-- PARTE QUE VAI MOSTRAR AVISOS DE MENSAGENS MODAL BOOTSTRAP -->
 
     <!-- Modal -->
@@ -32,11 +32,13 @@
                     <h4 class="modal-title" id="myModalLabel">Verificar Informações</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    Você Tem relatórios pendentes!
+
+                    <br /><br /><b>Verificar caixa de mensagens</b>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+
                 </div>
             </div>
         </div>
@@ -46,10 +48,67 @@
 
 
 
+    <!-- CONTEUDO -->
+
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">EDITAIS DE PESQUISAS</div>
+
+        <!-- Table -->
+
+        <table class="table table-striped">
+            <tr class="table tab-pane" >
+                <th >EDITAL Nº</th>
+                <th>DATA INÍCIO INSCRIÇÕES</th>
+                <th>DATA FIM INSCRIÇÕES</th>
+                <th>TIPO</th>
+                <th>LINK</th>
+                
+            </tr>
+            <tr class="table">
+                <td>1/2015</td>
+                <td>12/2/2015</td>
+                <td>20/2/2015</td>
+                <td>PIBIC/IFNMG</td>
+                <td><a href="<td><a>http://www.ifnmg.edu.br/programas-jan/pibic/pibic-2015</a></td>">link</a></td>
+                
+            </tr>
+            <tr class="table">
+                <td>2/2015</td>
+                <td>12/2/2015</td>
+                <td>20/2/2015</td>
+                <td>FAPEMIG</td>
+                <td><a href="http://www.ifnmg.edu.br/programas-jan/pibic/pibic-2015"></a></td>
+            </tr>
+            
+            <tr class="table" >
+                <td>2/2015</td>
+                <td>12/2/2015</td>
+                <td>20/2/2015</td>
+                <td>PIBEX</td>
+                <td><a href="http://www.ifnmg.edu.br/programas-jan/pibex/2014">link</a></td>
+            </tr>
+            
+            <tr class="table">
+                <td>2/2015</td>
+                <td>12/2/2015</td>
+                <td>20/2/2015</td>
+                <td>PIBEX</td>
+                <td><a href="http://www.ifnmg.edu.br/programas-jan/pibex/2014">link</a></td>
+            </tr>
+           
+
+        </table>
+
+    </div>
 
 
 
 
+
+
+    <!-- FIM CONTEUDO -->
 
 
     <!-- 
